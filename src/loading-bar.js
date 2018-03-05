@@ -206,7 +206,7 @@
         /**
          * Inserts the loading bar element into the dom, and sets it to 2%
          */
-        function _start() {
+        function _start(customLoadingMsg) {
           if (!$animate) {
             $animate = $injector.get('$animate');
           }
@@ -239,7 +239,7 @@
           }
 
           if (includeSpinner) {
-            $animate.enter(spinner, $parent, loadingBarContainer);
+            $animate.enter(getSpinner(customLoadingMsg), $parent, loadingBarContainer);
           }
 
           _set(startSize);
